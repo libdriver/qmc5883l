@@ -8,7 +8,7 @@
 
 [![MISRA](https://img.shields.io/badge/misra-compliant-brightgreen.svg)](/misra/README.md) [![API](https://img.shields.io/badge/api-reference-blue.svg)](https://www.libdriver.com/docs/qmc5883l/index.html) [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](/LICENSE)
 
-QMC5883L是一款多芯片三轴磁传感器。这种表面贴装的小型芯片集成了带有信号调理ASIC的磁传感器，适用于无人机、机器人、移动和个人手持设备中的指南针、导航和游戏等高精度应用。QMC5883L基于霍尼韦尔AMR技术授权的最先进的高分辨率磁阻技术。与定制设计的16位ADC ASIC一起，它具有低噪声、高精度、低功耗、偏移消除和温度补偿的优点。QMC5883L可实现1°至2°的罗盘航向精度。I²C串行总线便于接口。
+QMC5883L是一款多芯片三轴磁传感器。这种表面贴装的小型芯片集成了带有信号调理ASIC的磁传感器，适用于无人机、机器人、移动和个人手持设备中的指南针、导航和游戏等高精度应用。QMC5883L基于霍尼韦尔AMR技术授权的最先进的高分辨率磁阻技术。与定制设计的16位ADC ASIC一起，它具有低噪声、高精度、低功耗、偏移消除和温度补偿的优点。QMC5883L可实现1°至2°的罗盘航向精度。
 
 LibDriver QMC5883L是LibDriver推出的QMC5883L的全功能驱动，该驱动提供磁场读取等功能并且它符合MISRA标准。
 
