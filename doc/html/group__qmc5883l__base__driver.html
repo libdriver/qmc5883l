@@ -429,7 +429,7 @@ Functions</h2></td></tr>
 <p>close the chip </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -476,8 +476,8 @@ Functions</h2></td></tr>
 <p>get the full scale </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*scale</td><td>points to a full scale buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*scale</td><td>pointer to a full scale buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -523,8 +523,8 @@ Functions</h2></td></tr>
 <p>get interrupt status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -570,8 +570,8 @@ Functions</h2></td></tr>
 <p>get the chip mode </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*mode</td><td>points to a chip mode buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*mode</td><td>pointer to a chip mode buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -617,8 +617,8 @@ Functions</h2></td></tr>
 <p>get the output rate </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*rate</td><td>points to an output rate buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*rate</td><td>pointer to an output rate buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -664,8 +664,8 @@ Functions</h2></td></tr>
 <p>get the over sample </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*sample</td><td>points to an over sample buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*sample</td><td>pointer to an over sample buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -711,8 +711,8 @@ Functions</h2></td></tr>
 <p>get period </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*fbr</td><td>points to a param buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*fbr</td><td>pointer to a param buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -758,8 +758,8 @@ Functions</h2></td></tr>
 <p>get pointer roll over status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>points to a bool value buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*enable</td><td>pointer to a bool value buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -805,8 +805,8 @@ Functions</h2></td></tr>
 <p>get status </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*status</td><td>points to a status buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*status</td><td>pointer to a status buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -842,7 +842,7 @@ Functions</h2></td></tr>
 <p>get chip's information </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">*info</td><td>points to a qmc5883l info structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*info</td><td>pointer to a qmc5883l info structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -876,7 +876,7 @@ Functions</h2></td></tr>
 <p>initialize the chip </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
   </table>
   </dd>
 </dl>
@@ -930,9 +930,9 @@ Functions</h2></td></tr>
 <p>read data </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*raw</td><td>points to a raw data buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*m_gauss</td><td>points to a converted data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*raw</td><td>pointer to a raw data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*m_gauss</td><td>pointer to a converted data buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -984,9 +984,9 @@ Functions</h2></td></tr>
 <p>read temperature </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*raw</td><td>points to a raw data buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">*deg</td><td>points to a converted data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*raw</td><td>pointer to a raw data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*deg</td><td>pointer to a converted data buffer </td></tr>
   </table>
   </dd>
 </dl>
@@ -1032,8 +1032,8 @@ Functions</h2></td></tr>
 <p>set the full scale </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">scale</td><td>is the set full scale </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">scale</td><td>set full scale </td></tr>
   </table>
   </dd>
 </dl>
@@ -1079,8 +1079,8 @@ Functions</h2></td></tr>
 <p>enable or disable interrupt </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -1126,8 +1126,8 @@ Functions</h2></td></tr>
 <p>set the chip mode </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>is the chip mode </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>chip mode </td></tr>
   </table>
   </dd>
 </dl>
@@ -1173,8 +1173,8 @@ Functions</h2></td></tr>
 <p>set the output rate </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">rate</td><td>is the output rate </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rate</td><td>output rate </td></tr>
   </table>
   </dd>
 </dl>
@@ -1220,8 +1220,8 @@ Functions</h2></td></tr>
 <p>set the over sample </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sample</td><td>is the over sample </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sample</td><td>over sample </td></tr>
   </table>
   </dd>
 </dl>
@@ -1267,8 +1267,8 @@ Functions</h2></td></tr>
 <p>set period </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">fbr</td><td>is the set param </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fbr</td><td>set param </td></tr>
   </table>
   </dd>
 </dl>
@@ -1314,8 +1314,8 @@ Functions</h2></td></tr>
 <p>enable or disable pointer roll over </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>is a bool value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>bool value </td></tr>
   </table>
   </dd>
 </dl>
@@ -1351,7 +1351,7 @@ Functions</h2></td></tr>
 <p>soft reset </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>points to a qmc5883l handle structure </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*handle</td><td>pointer to a qmc5883l handle structure </td></tr>
   </table>
   </dd>
 </dl>

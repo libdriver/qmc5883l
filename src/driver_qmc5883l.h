@@ -158,56 +158,56 @@ typedef struct qmc5883l_info_s
 
 /**
  * @brief     initialize qmc5883l_handle_t structure
- * @param[in] HANDLE points to a qmc5883l handle structure
- * @param[in] STRUCTURE is qmc5883l_handle_t
+ * @param[in] HANDLE pointer to a qmc5883l handle structure
+ * @param[in] STRUCTURE qmc5883l_handle_t
  * @note      none
  */
 #define DRIVER_QMC5883L_LINK_INIT(HANDLE, STRUCTURE)   memset(HANDLE, 0, sizeof(STRUCTURE))
 
 /**
  * @brief     link iic_init function
- * @param[in] HANDLE points to a qmc5883l handle structure
- * @param[in] FUC points to an iic_init function address
+ * @param[in] HANDLE pointer to a qmc5883l handle structure
+ * @param[in] FUC pointer to an iic_init function address
  * @note      none
  */
 #define DRIVER_QMC5883L_LINK_IIC_INIT(HANDLE, FUC)    (HANDLE)->iic_init = FUC
 
 /**
  * @brief     link iic_deinit function
- * @param[in] HANDLE points to a qmc5883l handle structure
- * @param[in] FUC points to an iic_deinit function address
+ * @param[in] HANDLE pointer to a qmc5883l handle structure
+ * @param[in] FUC pointer to an iic_deinit function address
  * @note      none
  */
 #define DRIVER_QMC5883L_LINK_IIC_DEINIT(HANDLE, FUC)  (HANDLE)->iic_deinit = FUC
 
 /**
  * @brief     link iic_read function
- * @param[in] HANDLE points to a qmc5883l handle structure
- * @param[in] FUC points to an iic_read function address
+ * @param[in] HANDLE pointer to a qmc5883l handle structure
+ * @param[in] FUC pointer to an iic_read function address
  * @note      none
  */
 #define DRIVER_QMC5883L_LINK_IIC_READ(HANDLE, FUC)    (HANDLE)->iic_read = FUC
 
 /**
  * @brief     link iic_write function
- * @param[in] HANDLE points to a qmc5883l handle structure
- * @param[in] FUC points to an iic_write function address
+ * @param[in] HANDLE pointer to a qmc5883l handle structure
+ * @param[in] FUC pointer to an iic_write function address
  * @note      none
  */
 #define DRIVER_QMC5883L_LINK_IIC_WRITE(HANDLE, FUC)   (HANDLE)->iic_write = FUC
 
 /**
  * @brief     link delay_ms function
- * @param[in] HANDLE points to a qmc5883l handle structure
- * @param[in] FUC points to a delay_ms function address
+ * @param[in] HANDLE pointer to a qmc5883l handle structure
+ * @param[in] FUC pointer to a delay_ms function address
  * @note      none
  */
 #define DRIVER_QMC5883L_LINK_DELAY_MS(HANDLE, FUC)    (HANDLE)->delay_ms = FUC
 
 /**
  * @brief     link debug_print function
- * @param[in] HANDLE points to a qmc5883l handle structure
- * @param[in] FUC points to a debug_print function address
+ * @param[in] HANDLE pointer to a qmc5883l handle structure
+ * @param[in] FUC pointer to a debug_print function address
  * @note      none
  */
 #define DRIVER_QMC5883L_LINK_DEBUG_PRINT(HANDLE, FUC) (HANDLE)->debug_print = FUC
@@ -225,7 +225,7 @@ typedef struct qmc5883l_info_s
 
 /**
  * @brief      get chip's information
- * @param[out] *info points to a qmc5883l info structure
+ * @param[out] *info pointer to a qmc5883l info structure
  * @return     status code
  *             - 0 success
  *             - 2 handle is NULL
@@ -235,7 +235,7 @@ uint8_t qmc5883l_info(qmc5883l_info_t *info);
 
 /**
  * @brief     initialize the chip
- * @param[in] *handle points to a qmc5883l handle structure
+ * @param[in] *handle pointer to a qmc5883l handle structure
  * @return    status code
  *            - 0 success
  *            - 1 iic initialization failed
@@ -249,7 +249,7 @@ uint8_t qmc5883l_init(qmc5883l_handle_t *handle);
 
 /**
  * @brief     close the chip
- * @param[in] *handle points to a qmc5883l handle structure
+ * @param[in] *handle pointer to a qmc5883l handle structure
  * @return    status code
  *            - 0 success
  *            - 1 iic deinit failed
@@ -262,9 +262,9 @@ uint8_t qmc5883l_deinit(qmc5883l_handle_t *handle);
 
 /**
  * @brief      read data
- * @param[in]  *handle points to a qmc5883l handle structure
- * @param[out] *raw points to a raw data buffer
- * @param[out] *m_gauss points to a converted data buffer
+ * @param[in]  *handle pointer to a qmc5883l handle structure
+ * @param[out] *raw pointer to a raw data buffer
+ * @param[out] *m_gauss pointer to a converted data buffer
  * @return     status code
  *             - 0 success
  *             - 1 continuous read failed
@@ -276,9 +276,9 @@ uint8_t qmc5883l_read(qmc5883l_handle_t *handle, int16_t raw[3], float m_gauss[3
 
 /**
  * @brief      read temperature
- * @param[in]  *handle points to a qmc5883l handle structure
- * @param[out] *raw points to a raw data buffer
- * @param[out] *deg points to a converted data buffer
+ * @param[in]  *handle pointer to a qmc5883l handle structure
+ * @param[out] *raw pointer to a raw data buffer
+ * @param[out] *deg pointer to a converted data buffer
  * @return     status code
  *             - 0 success
  *             - 1 read temperature failed
@@ -292,8 +292,8 @@ uint8_t qmc5883l_read_temperature(qmc5883l_handle_t *handle, int16_t *raw, float
 
 /**
  * @brief      get status
- * @param[in]  *handle points to a qmc5883l handle structure
- * @param[out] *status points to a status buffer
+ * @param[in]  *handle pointer to a qmc5883l handle structure
+ * @param[out] *status pointer to a status buffer
  * @return     status code
  *             - 0 success
  *             - 1 get status failed
@@ -305,8 +305,8 @@ uint8_t qmc5883l_get_status(qmc5883l_handle_t *handle, uint8_t *status);
 
 /**
  * @brief     set the chip mode
- * @param[in] *handle points to a qmc5883l handle structure
- * @param[in] mode is the chip mode
+ * @param[in] *handle pointer to a qmc5883l handle structure
+ * @param[in] mode chip mode
  * @return    status code
  *            - 0 success
  *            - 1 set mode failed
@@ -318,8 +318,8 @@ uint8_t qmc5883l_set_mode(qmc5883l_handle_t *handle, qmc5883l_mode_t mode);
 
 /**
  * @brief      get the chip mode
- * @param[in]  *handle points to a qmc5883l handle structure
- * @param[out] *mode points to a chip mode buffer
+ * @param[in]  *handle pointer to a qmc5883l handle structure
+ * @param[out] *mode pointer to a chip mode buffer
  * @return     status code
  *             - 0 success
  *             - 1 get mode failed
@@ -331,8 +331,8 @@ uint8_t qmc5883l_get_mode(qmc5883l_handle_t *handle, qmc5883l_mode_t *mode);
 
 /**
  * @brief     set the output rate
- * @param[in] *handle points to a qmc5883l handle structure
- * @param[in] rate is the output rate
+ * @param[in] *handle pointer to a qmc5883l handle structure
+ * @param[in] rate output rate
  * @return    status code
  *            - 0 success
  *            - 1 set output rate failed
@@ -344,8 +344,8 @@ uint8_t qmc5883l_set_output_rate(qmc5883l_handle_t *handle, qmc5883l_output_rate
 
 /**
  * @brief      get the output rate
- * @param[in]  *handle points to a qmc5883l handle structure
- * @param[out] *rate points to an output rate buffer
+ * @param[in]  *handle pointer to a qmc5883l handle structure
+ * @param[out] *rate pointer to an output rate buffer
  * @return     status code
  *             - 0 success
  *             - 1 get output rate failed
@@ -357,8 +357,8 @@ uint8_t qmc5883l_get_output_rate(qmc5883l_handle_t *handle, qmc5883l_output_rate
 
 /**
  * @brief     set the full scale
- * @param[in] *handle points to a qmc5883l handle structure
- * @param[in] scale is the set full scale
+ * @param[in] *handle pointer to a qmc5883l handle structure
+ * @param[in] scale set full scale
  * @return    status code
  *            - 0 success
  *            - 1 set full scale failed
@@ -370,8 +370,8 @@ uint8_t qmc5883l_set_full_scale(qmc5883l_handle_t *handle, qmc5883l_full_scale_t
 
 /**
  * @brief      get the full scale
- * @param[in]  *handle points to a qmc5883l handle structure
- * @param[out] *scale points to a full scale buffer
+ * @param[in]  *handle pointer to a qmc5883l handle structure
+ * @param[out] *scale pointer to a full scale buffer
  * @return     status code
  *             - 0 success
  *             - 1 get full scale failed
@@ -383,8 +383,8 @@ uint8_t qmc5883l_get_full_scale(qmc5883l_handle_t *handle, qmc5883l_full_scale_t
 
 /**
  * @brief     set the over sample
- * @param[in] *handle points to a qmc5883l handle structure
- * @param[in] sample is the over sample
+ * @param[in] *handle pointer to a qmc5883l handle structure
+ * @param[in] sample over sample
  * @return    status code
  *            - 0 success
  *            - 1 set over sample failed
@@ -396,8 +396,8 @@ uint8_t qmc5883l_set_over_sample(qmc5883l_handle_t *handle, qmc5883l_over_sample
 
 /**
  * @brief      get the over sample
- * @param[in]  *handle points to a qmc5883l handle structure
- * @param[out] *sample points to an over sample buffer
+ * @param[in]  *handle pointer to a qmc5883l handle structure
+ * @param[out] *sample pointer to an over sample buffer
  * @return     status code
  *             - 0 success
  *             - 1 get over sample failed
@@ -409,8 +409,8 @@ uint8_t qmc5883l_get_over_sample(qmc5883l_handle_t *handle, qmc5883l_over_sample
 
 /**
  * @brief     enable or disable interrupt
- * @param[in] *handle points to a qmc5883l handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to a qmc5883l handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set interrupt failed
@@ -422,8 +422,8 @@ uint8_t qmc5883l_set_interrupt(qmc5883l_handle_t *handle, qmc5883l_bool_t enable
 
 /**
  * @brief      get interrupt status
- * @param[in]  *handle points to a qmc5883l handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to a qmc5883l handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get interrupt failed
@@ -435,8 +435,8 @@ uint8_t qmc5883l_get_interrupt(qmc5883l_handle_t *handle, qmc5883l_bool_t *enabl
 
 /**
  * @brief     enable or disable pointer roll over
- * @param[in] *handle points to a qmc5883l handle structure
- * @param[in] enable is a bool value
+ * @param[in] *handle pointer to a qmc5883l handle structure
+ * @param[in] enable bool value
  * @return    status code
  *            - 0 success
  *            - 1 set pointer roll over failed
@@ -448,8 +448,8 @@ uint8_t qmc5883l_set_pointer_roll_over(qmc5883l_handle_t *handle, qmc5883l_bool_
 
 /**
  * @brief      get pointer roll over status
- * @param[in]  *handle points to a qmc5883l handle structure
- * @param[out] *enable points to a bool value buffer
+ * @param[in]  *handle pointer to a qmc5883l handle structure
+ * @param[out] *enable pointer to a bool value buffer
  * @return     status code
  *             - 0 success
  *             - 1 get pointer roll over failed
@@ -461,7 +461,7 @@ uint8_t qmc5883l_get_pointer_roll_over(qmc5883l_handle_t *handle, qmc5883l_bool_
 
 /**
  * @brief     soft reset
- * @param[in] *handle points to a qmc5883l handle structure
+ * @param[in] *handle pointer to a qmc5883l handle structure
  * @return    status code
  *            - 0 success
  *            - 1 soft reset failed
@@ -473,8 +473,8 @@ uint8_t qmc5883l_soft_reset(qmc5883l_handle_t *handle);
 
 /**
  * @brief     set period
- * @param[in] *handle points to a qmc5883l handle structure
- * @param[in] fbr is the set param
+ * @param[in] *handle pointer to a qmc5883l handle structure
+ * @param[in] fbr set param
  * @return    status code
  *            - 0 success
  *            - 1 set period failed
@@ -486,8 +486,8 @@ uint8_t qmc5883l_set_period(qmc5883l_handle_t *handle, uint8_t fbr);
 
 /**
  * @brief      get period
- * @param[in]  *handle points to a qmc5883l handle structure
- * @param[out] *fbr points to a param buffer
+ * @param[in]  *handle pointer to a qmc5883l handle structure
+ * @param[out] *fbr pointer to a param buffer
  * @return     status code
  *             - 0 success
  *             - 1 get period failed
@@ -510,10 +510,10 @@ uint8_t qmc5883l_get_period(qmc5883l_handle_t *handle, uint8_t *fbr);
 
 /**
  * @brief     set the chip register
- * @param[in] *handle points to a qmc5883l handle structure
- * @param[in] reg is the iic register address
- * @param[in] *buf points to a data buffer
- * @param[in] len is the data buffer length
+ * @param[in] *handle pointer to a qmc5883l handle structure
+ * @param[in] reg iic register address
+ * @param[in] *buf pointer to a data buffer
+ * @param[in] len data buffer length
  * @return    status code
  *            - 0 success
  *            - 1 write failed
@@ -525,10 +525,10 @@ uint8_t qmc5883l_set_reg(qmc5883l_handle_t *handle, uint8_t reg, uint8_t *buf, u
 
 /**
  * @brief      get the chip register
- * @param[in]  *handle points to a qmc5883l handle structure
- * @param[in]  reg is the iic register address
- * @param[out] *buf points to a data buffer
- * @param[in]  len is the data buffer length
+ * @param[in]  *handle pointer to a qmc5883l handle structure
+ * @param[in]  reg iic register address
+ * @param[out] *buf pointer to a data buffer
+ * @param[in]  len data buffer length
  * @return     status code
  *             - 0 success
  *             - 1 read failed
