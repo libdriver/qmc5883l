@@ -10,7 +10,7 @@
 
 The QMC5883L is a multi-chip three-axis magnetic sensor. This surface -mount, small sized chip has integrated magnetic sensors with signal condition ASIC, targeted for high precision applications such as compassing, navigation and gaming in drone, robot, mobile and personal hand-held devices.The QMC5883L is based on our state-of-the-art, high resolution, magneto-resistive technology licensed from Honeywell AMR technology. Along with custom-designed 16-bit ADC ASIC, it offers the advantages of low noise, high accuracy, low power consumption, offset cancellation and temperature compensation. QMC5883L enables 1° to 2° compass heading accuracy. The I²C serial bus allows for easy interface.
 
-LibDriver QMC5883L is the full function driver of QMC5883L launched by LibDriver.It provides magnetic field reading and other functions. LibDriver complies with MISRA.
+LibDriver QMC5883L is a full-featured driver of QMC5883L launched by LibDriver.It provides magnetic field reading and other functions. LibDriver complies with MISRA.
 
 ### Table of Contents
 
