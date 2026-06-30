@@ -121,7 +121,7 @@ qmc5883l: interface is IIC.
 qmc5883l: driver version is 1.0.
 qmc5883l: min supply voltage is 2.2V.
 qmc5883l: max supply voltage is 3.6V.
-qmc5883l: max current is 2.60mA.
+qmc5883l: max current is 0.85mA.
 qmc5883l: max temperature is 85.0C.
 qmc5883l: min temperature is -40.0C.
 ```
