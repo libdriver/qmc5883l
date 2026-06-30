@@ -43,7 +43,7 @@
 #define MANUFACTURER_NAME         "QST"                 /**< manufacturer name */
 #define SUPPLY_VOLTAGE_MIN        2.16f                 /**< chip min supply voltage */
 #define SUPPLY_VOLTAGE_MAX        3.6f                  /**< chip max supply voltage */
-#define MAX_CURRENT               2.6f                  /**< chip max current */
+#define MAX_CURRENT               0.85f                 /**< chip max current */
 #define TEMPERATURE_MIN           -40.0f                /**< chip min operating temperature */
 #define TEMPERATURE_MAX           85.0f                 /**< chip max operating temperature */
 #define DRIVER_VERSION            1000                  /**< driver version */
@@ -79,7 +79,7 @@
  *            - 2 handle is NULL
  *            - 3 linked functions is NULL
  *            - 4 id is invalid
- *            - 4 soft reset failed
+ *            - 5 soft reset failed
  * @note      none
  */
 uint8_t qmc5883l_init(qmc5883l_handle_t *handle)
@@ -147,20 +147,20 @@ uint8_t qmc5883l_init(qmc5883l_handle_t *handle)
         
         return 4;                                                                                 /* return error */
     }
-    res = handle->iic_read(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);         /* read control1 */
+    res = handle->iic_read(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);         /* read control 2 */
     if (res != 0)                                                                                 /* check result */
     {
-        handle->debug_print("qmc5883l: read control1.\n");                                        /* read control1 failed */
+        handle->debug_print("qmc5883l: read control 2.\n");                                       /* read control 2 failed */
         (void)handle->iic_deinit();                                                               /* iic deinit */
         
         return 5;                                                                                 /* return error */
     }
     prev &= ~(1 << 7);                                                                            /* clear settings */
     prev |= 1 << 7;                                                                               /* set bool */
-    res = handle->iic_write(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);        /* write control1 */
+    res = handle->iic_write(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);        /* write control 2 */
     if (res != 0)                                                                                 /* check result */
     {
-        handle->debug_print("qmc5883l: write control1.\n");                                       /* write control1 failed */
+        handle->debug_print("qmc5883l: write control 2.\n");                                      /* write control 2 failed */
         (void)handle->iic_deinit();                                                               /* iic deinit */
         
         return 5;                                                                                 /* return error */
@@ -196,19 +196,19 @@ uint8_t qmc5883l_deinit(qmc5883l_handle_t *handle)
         return 3;                                                                                 /* return error */
     }
 
-    res = handle->iic_read(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);         /* read control1 */
+    res = handle->iic_read(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);         /* read control 2 */
     if (res != 0)                                                                                 /* check result */
     {
-        handle->debug_print("qmc5883l: read control1.\n");                                        /* read control1 failed */
+        handle->debug_print("qmc5883l: read control 2.\n");                                       /* read control 2 failed */
 
         return 4;                                                                                 /* return error */
     }
     prev &= ~(1 << 7);                                                                            /* clear settings */
     prev |= 1 << 7;                                                                               /* set bool */
-    res = handle->iic_write(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);        /* write control1 */
+    res = handle->iic_write(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);        /* write control 2 */
     if (res != 0)                                                                                 /* check result */
     {
-        handle->debug_print("qmc5883l: write control1.\n");                                       /* write control1 failed */
+        handle->debug_print("qmc5883l: write control 2.\n");                                      /* write control 2 failed */
 
         return 4;                                                                                 /* return error */
     }
@@ -653,19 +653,19 @@ uint8_t qmc5883l_set_interrupt(qmc5883l_handle_t *handle, qmc5883l_bool_t enable
         return 3;                                                                                 /* return error */
     }
     
-    res = handle->iic_read(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);         /* read control1 */
+    res = handle->iic_read(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);         /* read control 2 */
     if (res != 0)                                                                                 /* check result */
     {
-        handle->debug_print("qmc5883l: read control1.\n");                                        /* read control1 failed */
+        handle->debug_print("qmc5883l: read control 2.\n");                                       /* read control 2 failed */
         
         return 1;                                                                                 /* return error */
     }
     prev &= ~(1 << 0);                                                                            /* clear settings */
     prev |= (!enable) << 0;                                                                       /* set bool */
-    res = handle->iic_write(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);        /* write control1 */
+    res = handle->iic_write(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);        /* write control 2 */
     if (res != 0)                                                                                 /* check result */
     {
-        handle->debug_print("qmc5883l: write control1.\n");                                       /* write control1 failed */
+        handle->debug_print("qmc5883l: write control 2.\n");                                      /* write control 2 failed */
         
         return 1;                                                                                 /* return error */
     }
@@ -698,10 +698,10 @@ uint8_t qmc5883l_get_interrupt(qmc5883l_handle_t *handle, qmc5883l_bool_t *enabl
         return 3;                                                                                 /* return error */
     }
     
-    res = handle->iic_read(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);         /* read control1 */
+    res = handle->iic_read(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);         /* read control 2 */
     if (res != 0)                                                                                 /* check result */
     {
-        handle->debug_print("qmc5883l: read control1.\n");                                        /* read control1 failed */
+        handle->debug_print("qmc5883l: read control 2.\n");                                       /* read control 2 failed */
         
         return 1;                                                                                 /* return error */
     }
@@ -735,19 +735,19 @@ uint8_t qmc5883l_set_pointer_roll_over(qmc5883l_handle_t *handle, qmc5883l_bool_
         return 3;                                                                                 /* return error */
     }
     
-    res = handle->iic_read(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);         /* read control1 */
+    res = handle->iic_read(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);         /* read control 2 */
     if (res != 0)                                                                                 /* check result */
     {
-        handle->debug_print("qmc5883l: read control1.\n");                                        /* read control1 failed */
+        handle->debug_print("qmc5883l: read control 2.\n");                                       /* read control 2 failed */
         
         return 1;                                                                                 /* return error */
     }
     prev &= ~(1 << 6);                                                                            /* clear settings */
     prev |= enable << 6;                                                                          /* set bool */
-    res = handle->iic_write(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);        /* write control1 */
+    res = handle->iic_write(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);        /* write control 2 */
     if (res != 0)                                                                                 /* check result */
     {
-        handle->debug_print("qmc5883l: write control1.\n");                                       /* write control1 failed */
+        handle->debug_print("qmc5883l: write control 2.\n");                                      /* write control 2 failed */
         
         return 1;                                                                                 /* return error */
     }
@@ -780,10 +780,10 @@ uint8_t qmc5883l_get_pointer_roll_over(qmc5883l_handle_t *handle, qmc5883l_bool_
         return 3;                                                                                 /* return error */
     }
     
-    res = handle->iic_read(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);         /* read control1 */
+    res = handle->iic_read(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);         /* read control 2 */
     if (res != 0)                                                                                 /* check result */
     {
-        handle->debug_print("qmc5883l: read control1.\n");                                        /* read control1 failed */
+        handle->debug_print("qmc5883l: read control 2.\n");                                       /* read control 2 failed */
         
         return 1;                                                                                 /* return error */
     }
@@ -816,19 +816,19 @@ uint8_t qmc5883l_soft_reset(qmc5883l_handle_t *handle)
         return 3;                                                                                 /* return error */
     }
     
-    res = handle->iic_read(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);         /* read control1 */
+    res = handle->iic_read(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);         /* read control 2 */
     if (res != 0)                                                                                 /* check result */
     {
-        handle->debug_print("qmc5883l: read control1.\n");                                        /* read control1 failed */
+        handle->debug_print("qmc5883l: read control 2.\n");                                       /* read control 2 failed */
         
         return 1;                                                                                 /* return error */
     }
     prev &= ~(1 << 7);                                                                            /* clear settings */
     prev |= 1 << 7;                                                                               /* set bool */
-    res = handle->iic_write(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);        /* write control1 */
+    res = handle->iic_write(QMC5883L_ADDRESS, QMC5883L_REG_CONTROL2, (uint8_t *)&prev, 1);        /* write control 2 */
     if (res != 0)                                                                                 /* check result */
     {
-        handle->debug_print("qmc5883l: write control1.\n");                                       /* write control1 failed */
+        handle->debug_print("qmc5883l: write control 2.\n");                                      /* write control 2 failed */
         
         return 1;                                                                                 /* return error */
     }
@@ -926,7 +926,7 @@ uint8_t qmc5883l_read(qmc5883l_handle_t *handle, int16_t raw[3], float m_gauss[3
     uint8_t res;
     uint8_t prev;
     uint8_t status;
-    uint16_t num = 5000;
+    uint16_t num = 500;
     uint8_t buf[6];
     float resolution;
     
@@ -946,7 +946,7 @@ uint8_t qmc5883l_read(qmc5883l_handle_t *handle, int16_t raw[3], float m_gauss[3
         
         return 1;                                                                                  /* return error */
     }
-    prev = prev >> 4;                                                                              /* set gain */
+    prev = (prev >> 4) & 0x03;                                                                     /* set gain */
     switch (prev)                                                                                  /* choose resolution */
     {
         case 0x00 :

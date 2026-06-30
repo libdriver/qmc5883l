@@ -242,7 +242,7 @@ uint8_t qmc5883l_info(qmc5883l_info_t *info);
  *            - 2 handle is NULL
  *            - 3 linked functions is NULL
  *            - 4 id is invalid
- *            - 4 soft reset failed
+ *            - 5 soft reset failed
  * @note      none
  */
 uint8_t qmc5883l_init(qmc5883l_handle_t *handle);
